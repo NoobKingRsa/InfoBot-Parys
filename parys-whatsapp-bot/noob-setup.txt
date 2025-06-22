@@ -1,0 +1,195 @@
+💬 Parys WhatsApp Bot – Public Setup Guide
+
+> Welcome! This bot was built to help locals in Parys, South Africa find nearby services like plumbers, tutors, hairdressers, etc. It runs using Python, a free WhatsApp API (like Twilio), and works even if you're just using your phone.
+
+
+
+🚀 What Does This Bot Do?
+
+You send a message like:
+
+> I need a plumber
+Find a bakery in Tumahole
+
+
+
+The bot replies with a local business listing from a file. You control the listings using a simple text file (services.txt), and it does the rest.
+
+
+🧱 Project Structure
+
+When you download or clone this project, it should look like this:
+
+📁 parys-whatsapp-bot/
+├── app.py                → Bot code (the brain)
+├── services.txt          → You write/edit this (easy to read)
+├── services.json         → Bot reads this (auto-generated)
+├── requirements.txt      → Python packages needed
+├── setup.txt             → Dev instructions (this file)
+├── 📁 magic-tool/        → Scripts to convert, check, and backup
+├── 📁 backups/           → JSON backups before each update
+├── 📁 versioning/        → Labeled snapshots (e.g. "v1-launch")
+├── 📁 logs/              → Full logs of all bot updates
+
+✅ Setup Instructions
+
+1. Install Python packages
+
+> On Replit / PythonAnywhere / Laptop:
+
+
+
+pip install -r requirements.txt
+
+
+2. Add business listings to services.txt
+
+Here’s an example:
+
+type: plumber  
+name: Tumahole Pipes  
+phone: 0812345678  
+location: Tumahole  
+note: 24/7 emergency plumbing  
+sponsored: no
+
+You can add more — just copy/paste and change the details.
+
+
+3. Convert TXT ➜ JSON (bot format)
+
+> From inside the magic-tool/ folder, run:
+
+
+
+bash make.sh
+
+It will:
+
+✅ Check for missing fields
+
+💾 Make a backup
+
+🪄 Convert to services.json
+
+📝 Save a log file in logs/
+
+
+
+4. Test the Bot
+
+> Run the bot locally:
+
+
+
+python app.py
+
+You should see:
+
+Running on http://127.0.0.1:5000
+
+
+5. Connect to WhatsApp (via Twilio)
+
+1. Create an account at twilio.com/whatsapp
+
+
+2. Activate the sandbox
+
+
+3. From your phone, send the join code to Twilio
+
+
+4. In the sandbox webhook settings, paste this:
+
+
+
+https://your-deployment-url.com/whatsapp
+
+⚠️ If you're using Replit or Netlify, deploy first and update the link.
+
+
+6. Talk to It From WhatsApp
+
+Try these messages:
+
+I need a plumber  
+Find me a tutor  
+Bakery in Tumahole
+
+If your data is loaded and everything worked, the bot will respond.
+
+
+🔧 Bonus Scripts (Optional)
+
+bash backup.sh → Save a manual JSON backup
+
+bash save-version.sh → Save a labeled snapshot
+
+bash auto-ping.sh → Trigger Netlify to rebuild the live site
+
+bash auto-ping-Telegram-Whatsapp.sh → Notify bot about an update
+
+python json_to_txt.py → Restore TXT from JSON if you lose your edits
+
+python verify.py → Run a test check without making changes
+
+
+
+
+💡 Useful Tips
+
+sponsored: yes puts a listing at the top of search results
+
+Use short clear categories like: baker, hairdresser, taxi, mechanic
+
+You can expand this to other towns later — it's fully editable
+
+Use logs/ to track what changed, when, and if something broke
+
+
+😵‍💫 If You Get Lost
+
+> 🔍 “I don’t know what I’m doing anymore...”
+
+
+
+It’s okay. Happens to the best of us.
+Just scroll back up, read slower — and if all else fails:
+
+> Ask ChatGPT like:
+“Hey, I’m working on the Parys WhatsApp bot and I broke something”
+
+
+
+Seriously. You’ll probably get better help than from your cousin who “did IT” in 2013.
+
+❤️ Built for Real People
+
+This bot was built:
+
+without a Laptop 
+
+took 2 years on the phone 
+
+and while cooking noodles
+
+Before it was ever fully tested 😅
+
+Date built: 18 June 2025
+
+To help real people in Parys, South Africa
+
+
+You're welcome to fork it, remix it, or rebuild it for your own town, your auntie's shop, or your cousin's spaza.
+
+It started simple — just a TXT file, a dream, and some boiling water 🍜💻
+
+👑 Final Motivation
+
+> Whether you're trying to help your community, learn to code, or just cover your hosting bills… this is a great place to start.
+
+
+
+Every update you make here gets you one step closer.
+Keep building. One bot at a time. 💻🔥

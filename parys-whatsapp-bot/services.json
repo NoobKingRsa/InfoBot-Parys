@@ -1,0 +1,26 @@
+[
+  {
+    "type": "plumber",
+    "name": "Sipho's Plumbing",
+    "phone": "0761234567",
+    "location": "Tumahole",
+    "note": "24/7 emergency service",
+    "sponsored": true
+  },
+  {
+    "type": "plumber",
+    "name": "Jonas Plumbing",
+    "phone": "0719876543",
+    "location": "Parys Central",
+    "note": "Affordable rates",
+    "sponsored": false
+  },
+  {
+    "type": "tutor",
+    "name": "Mama Lerato's Maths",
+    "phone": "0730000000",
+    "location": "Parys",
+    "note": "High school level",
+    "sponsored": true
+  }
+]
